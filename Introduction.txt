@@ -1,0 +1,183 @@
+Terraform AWS Jenkins Infrastructure Project
+
+Project Overview
+
+This project demonstrates Infrastructure as Code (IaC) using Terraform on AWS. The objective was to automate the provisioning of AWS infrastructure and Jenkins installation, eliminating manual setup and ensuring consistent, repeatable deployments.
+
+The infrastructure includes a custom VPC, public subnet, Internet Gateway, route table, security group, and an EC2 instance with Jenkins automatically installed using a user_data script.
+
+---
+
+Project Objective
+
+- Automate AWS infrastructure provisioning.
+- Implement Infrastructure as Code practices.
+- Deploy Jenkins automatically on AWS EC2.
+- Manage infrastructure through version-controlled Terraform code.
+- Gain hands-on experience with AWS networking and Terraform.
+
+---
+
+Architecture
+
+Terraform Code
+→ AWS Provider
+→ VPC
+→ Public Subnet
+→ Internet Gateway
+→ Route Table
+→ Security Group
+→ EC2 Instance
+→ Jenkins Installation
+
+---
+
+AWS Resources Used
+
+VPC
+
+A custom Virtual Private Cloud (VPC) was created to provide an isolated networking environment for the infrastructure.
+
+Public Subnet
+
+A public subnet was created within the VPC to host the Jenkins server and allow internet access.
+
+Internet Gateway
+
+An Internet Gateway was attached to the VPC to enable communication between AWS resources and the internet.
+
+Route Table
+
+A route table was configured with a default route (0.0.0.0/0) pointing to the Internet Gateway.
+
+Security Group
+
+Security group rules were configured to allow:
+
+- SSH (Port 22)
+- Jenkins Access (Port 8080)
+
+EC2 Instance
+
+An Amazon EC2 instance was provisioned using Terraform and deployed within the public subnet.
+
+User Data Script
+
+A user_data script was used to automate Jenkins installation during EC2 instance startup.
+
+---
+
+Why Terraform?
+
+Terraform was selected because it provides:
+
+- Infrastructure as Code
+- Automation
+- Version Control
+- Reusability
+- Consistency Across Environments
+- Reduced Manual Errors
+
+---
+
+Terraform Workflow
+
+terraform init
+terraform validate
+terraform plan
+terraform apply
+terraform destroy
+
+terraform init
+
+Initializes Terraform and downloads required providers.
+
+terraform validate
+
+Validates Terraform configuration files.
+
+terraform plan
+
+Generates an execution plan showing proposed changes.
+
+terraform apply
+
+Creates infrastructure on AWS.
+
+terraform destroy
+
+Removes all created infrastructure resources.
+
+---
+
+Terraform State Management
+
+Terraform uses a state file ("terraform.tfstate") to track infrastructure resources and their current status.
+
+Best Practices
+
+- Do not push terraform.tfstate to GitHub.
+- Add terraform.tfstate to ".gitignore".
+- Protect state files as they may contain sensitive information.
+
+---
+
+Challenges Faced
+
+1. Public IP Not Assigned
+
+Troubleshooting subnet configuration and public IP assignment settings.
+
+2. Security Group Issues
+
+Verifying inbound rules for SSH and Jenkins access.
+
+3. Route Table Configuration
+
+Ensuring proper association between subnet and route table.
+
+4. User Data Failures
+
+Debugging Jenkins installation scripts during EC2 startup.
+
+5. State Management
+
+Managing Terraform state securely and avoiding accidental commits.
+
+---
+
+Key Skills Demonstrated
+
+- Terraform
+- AWS VPC
+- AWS EC2
+- Internet Gateway
+- Route Tables
+- Security Groups
+- Infrastructure as Code (IaC)
+- Jenkins Installation Automation
+- Git & GitHub
+- Linux Administration
+- AWS Networking
+
+---
+
+Resume Description
+
+Developed AWS infrastructure using Terraform and Infrastructure as Code principles. Automated provisioning of VPC, subnet, Internet Gateway, route table, security groups, and EC2 instances. Implemented Jenkins installation using EC2 user_data scripts and managed infrastructure through version-controlled Terraform code.
+
+---
+
+Interview Introduction
+
+I built a Terraform-based AWS infrastructure automation project where I provisioned a complete Jenkins environment using Infrastructure as Code. The project includes a custom VPC, public subnet, Internet Gateway, route tables, security groups, and an EC2 instance. Jenkins installation was automated using a user_data script. This project helped me gain practical experience in AWS networking, Terraform, automation, and infrastructure management while following industry-standard DevOps practices.
+
+---
+
+Project Outcome
+
+- Successfully automated AWS infrastructure deployment.
+- Reduced manual configuration effort.
+- Achieved repeatable and consistent infrastructure provisioning.
+- Gained hands-on experience with Terraform and AWS.
+- Built a strong foundational DevOps project suitable for interviews and resume showcase.
